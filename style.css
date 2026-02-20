@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  touch-action: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  background: #5c94fc;
+  font-family: 'Courier New', monospace;
+}
+
+#game-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: #5c94fc;
+}
+
+#hud {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: #2d5016;
+  color: #fff;
+  font-size: clamp(12px, 3vw, 16px);
+  flex-shrink: 0;
+}
+
+#game-canvas {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  display: block;
+  background: #5c94fc;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+#controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+  background: #2d5016;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+#dpad {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+#btn-left,
+#btn-right {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  min-height: 56px;
+  border: 3px solid #1a3009;
+  border-radius: 8px;
+  background: #4a7c23;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  position: relative;
+}
+
+#btn-left:active,
+#btn-right:active {
+  background: #3d6a1d;
+  transform: scale(0.95);
+}
+
+#btn-left::after {
+  content: '◀';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#btn-right::after {
+  content: '▶';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#btn-left span,
+#btn-right span {
+  display: none;
+}
+
+#btn-jump {
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
+  min-height: 64px;
+  border: 3px solid #1a3009;
+  border-radius: 50%;
+  background: #c41e3a;
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+#btn-jump:active {
+  background: #a01830;
+  transform: scale(0.95);
+}
+
+/* Overlay screens */
+#start-screen,
+#game-over-screen,
+#win-screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  z-index: 10;
+  padding: 20px;
+}
+
+#start-screen h1 {
+  font-size: clamp(28px, 8vw, 48px);
+  margin-bottom: 16px;
+  text-shadow: 3px 3px 0 #c41e3a;
+}
+
+#start-screen p {
+  font-size: clamp(16px, 4vw, 22px);
+  margin-bottom: 8px;
+}
+
+#start-screen .hint {
+  font-size: clamp(12px, 3vw, 14px);
+  opacity: 0.8;
+  margin-top: 24px;
+}
+
+#game-over-screen h2,
+#win-screen h2 {
+  font-size: clamp(24px, 6vw, 36px);
+  margin-bottom: 12px;
+}
+
+#game-over-screen p,
+#win-screen p {
+  font-size: clamp(16px, 4vw, 20px);
+  margin-bottom: 20px;
+}
+
+#btn-restart,
+#btn-next {
+  padding: 12px 28px;
+  font-size: 18px;
+  font-family: inherit;
+  background: #4a7c23;
+  color: #fff;
+  border: 3px solid #1a3009;
+  border-radius: 8px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+#btn-restart:active,
+#btn-next:active {
+  background: #3d6a1d;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Prevent zoom on double-tap (iOS) */
+button {
+  font-size: 16px;
+}
+
+@media (min-width: 641px) {
+  #game-wrapper {
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  }
+}
