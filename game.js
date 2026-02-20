@@ -75,10 +75,16 @@
       }
     }
 
-    // Platforms and blocks
+    // Platforms and blocks (raised a bit to allow Mario to walk underneath)
     const platforms = [
-      [5, 7, 3, 1], [10, 7, 2, 1], [14, 6, 2, 1], [18, 7, 3, 1],
-      [24, 6, 2, 1], [28, 7, 2, 1], [32, 6, 3, 1], [38, 7, 2, 1]
+      [5, 6, 3, 1],  // was row 7
+      [10, 6, 2, 1], // was row 7
+      [14, 5, 2, 1], // was row 6
+      [18, 6, 3, 1], // was row 7
+      [24, 5, 2, 1], // was row 6
+      [28, 6, 2, 1], // was row 7
+      [32, 5, 3, 1], // was row 6
+      [38, 6, 2, 1]  // was row 7
     ];
     platforms.forEach(([cx, cy, cw, ch]) => {
       for (let i = 0; i < cw; i++) {
