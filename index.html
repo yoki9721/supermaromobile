@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>Super Mario</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-wrapper">
+    <div id="hud">
+      <span id="score">Score: 0</span>
+      <span id="coins">Coins: 0</span>
+      <span id="lives">Lives: 3</span>
+    </div>
+    <canvas id="game-canvas"></canvas>
+
+    <!-- Mobile touch controls -->
+    <div id="controls">
+      <div id="dpad">
+        <button type="button" id="btn-left" aria-label="Move left"></button>
+        <button type="button" id="btn-right" aria-label="Move right"></button>
+      </div>
+      <button type="button" id="btn-jump" aria-label="Jump">A</button>
+    </div>
+
+    <div id="start-screen">
+      <h1>Super Mario</h1>
+      <p>Tap to Start</p>
+      <p class="hint">Use arrows or touch buttons to move and jump</p>
+    </div>
+
+    <div id="game-over-screen" class="hidden">
+      <h2>Game Over</h2>
+      <p id="final-score">Score: 0</p>
+      <button type="button" id="btn-restart">Play Again</button>
+    </div>
+
+    <div id="win-screen" class="hidden">
+      <h2>You Win!</h2>
+      <p id="win-score">Score: 0</p>
+      <button type="button" id="btn-next">Play Again</button>
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
