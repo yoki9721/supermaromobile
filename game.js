@@ -40,7 +40,7 @@
     x: 80,
     y: 0,
     w: 28,
-    h: 32,
+    h: 28,
     vx: 0,
     vy: 0,
     onGround: false,
